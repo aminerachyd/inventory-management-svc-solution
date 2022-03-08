@@ -2,9 +2,14 @@ package com.ibm.inventory_management.models;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document("stockitem")
 public class StockItem implements Serializable {
-    private String name;
+    @Id
     private String id = null;
+    private String name;
     private int stock = 0;
     private double price = 0.0;
     private String manufacturer = "";
@@ -24,7 +29,7 @@ public class StockItem implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public StockItem withName(String name) {
         this.setName(name);
         return this;

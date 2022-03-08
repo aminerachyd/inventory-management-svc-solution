@@ -1,6 +1,9 @@
 spring:
   application:
     name: "${IMAGE_NAME:template-spring-boot}"
+  data:
+    mongodb:
+      uri: mongodb://admin:password@localhost:27017/admin
 
   profiles:
     active: mock
@@ -23,8 +26,8 @@ greetingservice:
 
 swagger:
   baseApiPackage:
-  - "com.ibm.hello"
-  - "com.ibm.health"
+    - "com.ibm.hello"
+    - "com.ibm.health"
   title: "${IMAGE_NAME:template-spring-boot}"
   description: "Description"
   version: "1.0.0"

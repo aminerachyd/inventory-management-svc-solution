@@ -80,6 +80,12 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.opentracing.contrib/opentracing-spring-jaeger-cloud-starter
     compile group: 'io.opentracing.contrib', name: 'opentracing-spring-jaeger-cloud-starter', version: '3.1.1'
+
+    // Spring Mongodb dependency
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.2.5.RELEASE'
+
+    // Jackson repository populator
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
 }
 
 test {
