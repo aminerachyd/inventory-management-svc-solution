@@ -39,10 +39,6 @@ spec:
         version: {{ .Values.image.tag | quote }}
         app.kubernetes.io/instance: {{ include "starter-kit.name" . }}
     spec:
-      {{- if .Values.image.secretName }}
-      imagePullSecrets:
-        - name: {{ .Values.image.secretName }}
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -61,7 +57,7 @@ spec:
             - name: MONGODB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.image.secretName | quote }}
+                  name: {{ .Values.image.secretName  }}
                   key: mongodb-root-password
             - name: INGRESS_HOST
               value: ""
