@@ -58,6 +58,11 @@ spec:
             tcpSocket:
               port: http
           env:
+            - name: MONGODB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.image.secretName | quote }}
+                  key: mongodb-root-password
             - name: INGRESS_HOST
               value: ""
             - name: PROTOCOLS
