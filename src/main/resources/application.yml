@@ -3,7 +3,7 @@ spring:
     name: "${IMAGE_NAME:template-spring-boot}"
   data:
     mongodb:
-      uri: mongodb://admin:password@localhost:27017/admin
+      uri: mongodb://root:${MONGODB_ROOT_PASSWORD}@mongodb:27017/admin
 
   profiles:
     active: mock
