@@ -1,0 +1,11 @@
+podSecurityContext:
+  enabled: false
+
+containerSecurityContext:
+  enabled: false
+
+persistence:
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
